@@ -1,0 +1,63 @@
+$(function () {
+    var chart;
+    $(document).ready(function() {
+        chart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'container',
+                type: 'area',
+                marginRight: 130,
+                marginBottom: 25
+            },
+            title: {
+                text: 'My (saved) Instapaper Articles 2012',
+                x: -20 //center
+            },
+            xAxis: {
+                labels: false,
+                categories: [
+                {{#categories}}{{{to_s}}}{{/categories}}
+                ]
+            },
+            yAxis: {
+                title: {
+                    text: 'Count'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }],
+                min: 0,
+                max: {{max}}
+            },
+            tooltip: {
+                formatter: function() {
+                        return '<b>'+ this.series.name +'</b><br/>'+
+                        this.x +': '+ this.y +' articles';
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'top',
+                x: -10,
+                y: 100,
+                borderWidth: 0
+            },
+            series: [
+            {
+              name: 'Total',
+              data: {{total_data}}
+            }, {
+              name: 'Archive',
+              data: {{archive_data}}
+            }, {
+              name: 'Starred',
+              data: {{starred_data}}
+            }, {
+              name: 'Unread',
+              data: {{unread_data}}
+            }]
+        });
+    });
+});
