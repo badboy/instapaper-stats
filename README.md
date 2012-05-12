@@ -6,9 +6,9 @@ I wrote about it [here](http://fnordig.de/2012/05/08/my-instapaper-stats/).
 
 ## What is needed?
 
-Just one small gem and an [Instapaper](http://instapaper.com/) account.
+Just two small gems and an [Instapaper](http://instapaper.com/) account.
 
-    gem install mechanize
+    gem install mechanize mustache
 
 ## Usage
 
