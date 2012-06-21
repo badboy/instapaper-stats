@@ -8,6 +8,21 @@ $(function () {
                 marginRight: 130,
                 marginBottom: 25
             },
+            plotOptions: {
+              area: {
+                pointStart: 1940,
+                marker: {
+                  enabled: false,
+                  symbol: 'circle',
+                  radius: 2,
+                  states: {
+                    hover: {
+                      enabled: true
+                    }
+                  }
+                }
+              }
+            },
             title: {
                 text: 'My (saved) Instapaper Articles 2012',
                 x: -20 //center
